@@ -1,0 +1,28 @@
+{
+  "note": "config the console output and loaders here!",
+  "console": {
+    "success": "blueBright",
+    "error": "red",
+    "warn": "yellow",
+    "available": "blue, red, yellow, white, green, blueBright",
+    "editNames": {
+      "success": "• X4 IN RUNNING •",
+      "error":   "• X4 IN ERROR   •",
+      "warn":    "• X4 IN WARNING •"
+    }
+  },
+  "logger": {
+    "colors": {
+      "cmdStarter": "blueBright",
+      "evntStarter": "blue",
+      "cmdLoader": "blueBright",
+      "evntLoader": "blue"
+    },
+    "strings": {
+      "cmdStarter": "• X4 INPORTING COMMANDS •",
+      "evntStarter": "• X4 INPORTING EVENTS •",
+      "cmdLoader": "• X4 COMMAND •",
+      "evntLoader": "• X4 EVENT  •"
+    }
+  }
+}
