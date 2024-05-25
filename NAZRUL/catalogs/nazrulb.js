@@ -65,8 +65,8 @@ global.data = new Object({
   allCurrenciesID: new Array(),
   allThreadID: new Array(),
 });
-global.utils = require("./alvid.js");
-global.loading = require("./alvic.js");
+global.utils = require("./nazruld.js");
+global.loading = require("./nazrulc.js");
 global.nodemodule = new Object();
 global.config = new Object();
 global.ryuko = new Object();
@@ -116,7 +116,7 @@ try {
 }
 var configValue;
 try {
-  global.client.configPath = join(global.client.mainPath, "../../Alvi.json");
+  global.client.configPath = join(global.client.mainPath, "../../Nazrul.json");
   configValue = require(global.client.configPath);
   logger.loader(`deploying ${chalk.blueBright('NAZRUL')} file`);
 } catch (e) {
