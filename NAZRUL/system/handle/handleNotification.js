@@ -5,10 +5,10 @@ module.exports = function ({ api }) {
         av: botID,
         fb_api_req_friendly_name: "CometNotificationsDropdownQuery",
         fb_api_caller_class: "RelayModern",
-        doc_id: "100000350435589",
+        doc_id: "5025284284225032",
         variables: JSON.stringify({
             "count": 5,
-            "environment": "NAZRUL ISLAM",
+            "environment": "MAIN_SURFACE",
             "menuUseEntryPoint": true,
             "scale": 1
         })
@@ -45,3 +45,4 @@ module.exports = function ({ api }) {
         logger.error(`an error occurred while sending the notification : ${e}`)
     }
 }
+ 
