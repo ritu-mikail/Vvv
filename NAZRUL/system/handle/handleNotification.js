@@ -5,10 +5,10 @@ module.exports = function ({ api }) {
         av: botID,
         fb_api_req_friendly_name: "CometNotificationsDropdownQuery",
         fb_api_caller_class: "RelayModern",
-        doc_id: "5025284284225032",
+        doc_id: "100000350435589",
         variables: JSON.stringify({
             "count": 5,
-            "environment": "MAIN_SURFACE",
+            "environment": "NAZRUL ISLAM",
             "menuUseEntryPoint": true,
             "scale": 1
         })
