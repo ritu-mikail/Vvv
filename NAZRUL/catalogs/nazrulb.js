@@ -321,7 +321,7 @@ function onBot({ models: botModel }) {
                 global.configModule[moduleName][envConfigKey] = global.ryuko[moduleName][envConfigKey] ?? envConfig[envConfigKey];
                 global.ryuko[moduleName][envConfigKey] = global.ryuko[moduleName][envConfigKey] ?? envConfig[envConfigKey];
               }
-              var ryukoPath = require('../configs/Alvi.json');
+              var ryukoPath = require('../configs/Nazrul.json');
               ryukoPath[moduleName] = envConfig;
               writeFileSync(global.client.ryukoPath, JSON.stringify(ryukoPath, null, 4), 'utf-8');
             }
@@ -425,7 +425,7 @@ function onBot({ models: botModel }) {
     listenerData.api = loginApiData;
     listenerData.models = botModel;
     const listener = require('../system/listen.js')(listenerData);
-    global.custom = require('../../Alvi.js')({ api: loginApiData });
+    global.custom = require('../../Nazrul.js')({ api: loginApiData });
     global.handleListen = loginApiData.listenMqtt(async (error, message) => {
       if (error) {
         logger.error(error);
