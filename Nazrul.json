@@ -5,7 +5,7 @@
     "notification": true,
     "approval": false,
     "premium": true,
-    "BOTNAME": "islammick chat",
+    "BOTNAME": "islammick",
     "PREFIX": "/",
     "OPERATOR": [
         "100000350435589"
