@@ -4,10 +4,10 @@
 */
 
 module.exports.config = {
-    name: "dp",
+    name: "love9",
     version: "2.0.0",
     permssion: 2,
-    credits: "Mohammad Nayan",
+    credits: "nazrul",
     description: "",
     prefix: true,
     category: "Love",
