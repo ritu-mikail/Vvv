@@ -6,9 +6,9 @@
     "warn": "yellow",
     "available": "blue, red, yellow, white, green, blueBright",
     "editNames": {
-      "success": "• X4 IN RUNNING •",
-      "error":   "• X4 IN ERROR   •",
-      "warn":    "• X4 IN WARNING •"
+      "success": "NAZRUL RUNNING",
+      "error":   "NAZRUL ERROR",
+      "warn":    "NAZRUL WARNING"
     }
   },
   "logger": {
@@ -19,10 +19,10 @@
       "evntLoader": "blue"
     },
     "strings": {
-      "cmdStarter": "• X4 INPORTING COMMANDS •",
-      "evntStarter": "• X4 INPORTING EVENTS •",
-      "cmdLoader": "• X4 COMMAND •",
-      "evntLoader": "• X4 EVENT  •"
+      "cmdStarter": "NAZRUL INPORTING COMMANDS",
+      "evntStarter": "NAZRUL INPORTING EVENTS",
+      "cmdLoader": "NAZRUL COMMAND",
+      "evntLoader": "NAZRUL EVENT"
     }
   }
 }
