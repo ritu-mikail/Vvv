@@ -1,15 +1,15 @@
 /**
-* @author ProCoderMew
+* @author nazrul project
 * @warn Do not edit code or edit credits
 */
 
 module.exports.config = {
-    name: "dp5",
+    name: "dp20",
     version: "2.0.0",
-    permssion: 2,
-    credits: "Mohammad Nayan",
+    permission: 0,
+    credits: "nazrul",
+    prefix:true,
     description: "",
-    prefix: true,
     category: "Love",
     usages: "[tag]",
     cooldowns: 5,
@@ -26,9 +26,9 @@ module.exports.onLoad = async() => {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/cache/`;
-    const path = resolve(__dirname, 'cache', 'lovev12.png');
+    const path = resolve(__dirname, 'cache', 'lovev111.png');
     if (!existsSync(dirMaterial + "")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://drive.google.com/uc?id=14h0CWETnwzzvMCIRZpn807KpxBp0zrK4", path);
+    if (!existsSync(path)) await downloadFile("https://drive.google.com/uc?id=1gf9_9b6wGWUvsXVIwSBIwxDzG64BjT86", path);
 
 }
 
@@ -39,8 +39,8 @@ async function makeImage({ one, two }) {
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "cache");
 
-    let hon_img = await jimp.read(__root + "/lovev12.png");
-    let pathImg = __root + `/lovev2_${one}_${two}.png`;
+    let hon_img = await jimp.read(__root + "/lovev1.png");
+    let pathImg = __root + `/lovev111_${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
 
@@ -52,8 +52,8 @@ async function makeImage({ one, two }) {
 
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    hon_img.resize(719, 405).composite(circleOne.resize(150, 150), 515, 107
- ).composite(circleTwo.resize(150, 150), 54, 105);
+    hon_img.resize(1280, 695).composite(circleOne.resize(395, 395), 760, 135
+ ).composite(circleTwo.resize(395, 395), 155, 135);
 
     let raw = await hon_img.getBufferAsync("image/png");
 
@@ -75,10 +75,10 @@ module.exports.run = async function ({ event, api, args }) {
     const { threadID, messageID, senderID } = event;
     var mention = Object.keys(event.mentions)[0]
     let tag = event.mentions[mention].replace("@", "");
-    if (!mention) return api.sendMessage("Please tag 1 person", threadID, messageID);
+    if (!mention) return api.sendMessage("আপনার ভালোবাসার মানুষ টি কে টেগ করুন-", threadID, messageID);
     else {
         var one = senderID, two = mention;
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "This "  +  tag + ' love you so muchðŸ’”',
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "︵🦋🤍🍒\n\n___ღ༎-মন থেকে ভালোবেসে দেখো.!😻🥰\n\n"  +  tag + '\n\n___নির্দিষ্ট মানুষ ছাড়া আর অন্য কাউকে ভালো লাগবে না.!🖤😘\n\n ︵🦋🤍🍒',
             mentions: [{
           tag: tag,
           id: mention

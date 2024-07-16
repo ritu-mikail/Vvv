@@ -4,7 +4,7 @@
 */
 
 module.exports.config = {
-    name: "dp5",
+    name: "dp9",
     version: "2.0.0",
     permssion: 2,
     credits: "Mohammad Nayan",
@@ -26,9 +26,9 @@ module.exports.onLoad = async() => {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/cache/`;
-    const path = resolve(__dirname, 'cache', 'lovev12.png');
+    const path = resolve(__dirname, 'cache', 'qkev1.png');
     if (!existsSync(dirMaterial + "")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://drive.google.com/uc?id=14h0CWETnwzzvMCIRZpn807KpxBp0zrK4", path);
+    if (!existsSync(path)) await downloadFile("https://drive.google.com/uc?id=16bIyIiS-UF9COijs7FO7xNeFrkkTQIwl", path);
 
 }
 
@@ -39,28 +39,27 @@ async function makeImage({ one, two }) {
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "cache");
 
-    let hon_img = await jimp.read(__root + "/lovev12.png");
-    let pathImg = __root + `/lovev2_${one}_${two}.png`;
+    let qkev_img = await jimp.read(__root + "/qkev1.png");
+    let pathImg = __root + `/qkev_${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
-
+    
     let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-8'));
-
+    
     let getAvatarTwo = (await axios.get(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarTwo, Buffer.from(getAvatarTwo, 'utf-8'));
-
+    
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    hon_img.resize(719, 405).composite(circleOne.resize(150, 150), 515, 107
- ).composite(circleTwo.resize(150, 150), 54, 105);
-
-    let raw = await hon_img.getBufferAsync("image/png");
-
+    qkev_img.resize(1280, 696).composite(circleOne.resize(300, 300), 805, 145).composite(circleTwo.resize(300, 300), 190, 145);
+    
+    let raw = await qkev_img.getBufferAsync("image/png");
+    
     fs.writeFileSync(pathImg, raw);
     fs.unlinkSync(avatarOne);
     fs.unlinkSync(avatarTwo);
-
+    
     return pathImg;
 }
 async function circle(image) {
@@ -78,11 +77,11 @@ module.exports.run = async function ({ event, api, args }) {
     if (!mention) return api.sendMessage("Please tag 1 person", threadID, messageID);
     else {
         var one = senderID, two = mention;
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "This "  +  tag + ' love you so muchðŸ’”',
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "ðŸ‘‰"  +  tag + ' love you so muchðŸ¥°',
             mentions: [{
           tag: tag,
           id: mention
         }],
      attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
     }
-                    }
+          }
