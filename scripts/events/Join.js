@@ -15,10 +15,10 @@ module.exports.onLoad = function () {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { join } = global.nodemodule["path"];
 
-  const path = join(__dirname, "Nayan", "font");
+  const path = join(__dirname, "Nazrul", "font");
   if (existsSync(path)) mkdirSync(path, { recursive: true });	
 
-  const path2 = join(__dirname, "Nayan", "font");
+  const path2 = join(__dirname, "Nazrul", "font");
     if (!existsSync(path2)) mkdirSync(path2, { recursive: true });
 
     return;
@@ -42,7 +42,7 @@ ____________________________________
 জিঁলাঁপিঁ কে নক করতে পারেন 
 👉Fb https://www.facebook.com/ji.li.pi.6
 
-`, attachment: fs.createReadStream(__dirname + "Nayan", "font")} ,threadID));
+`, attachment: fs.createReadStream(__dirname + "Nazrul", "font")} ,threadID));
   }
   else {
     try {
@@ -50,7 +50,7 @@ ____________________________________
       let { threadName, participantIDs } = await api.getThreadInfo(threadID);
 
       const threadData = global.data.threadData.get(parseInt(threadID)) || {};
-      const path = join(__dirname, "Nayan", "font");
+      const path = join(__dirname, "Nazrul", "font");
       const pathGif = join(path, `${threadID}.gif`);
 
       var mentions = [], nameArray = [], memLength = [], i = 0;
@@ -72,11 +72,11 @@ ____________________________________
 
       if (existsSync(path)) mkdirSync(path, { recursive: true });
 
-      const randomPath = readdirSync(join(__dirname, "Nayan", "font"));
+      const randomPath = readdirSync(join(__dirname, "Nazrul", "font"));
 
       if (existsSync(pathGif)) formPush = { body: msg, attachment: createReadStream(pathGif), mentions }
       else if (randomPath.length != 0) {
-        const pathRandom = join(__dirname, "Nayan", "font", `${randomPath[Math.floor(Math.random() * randomPath.length)]}`);
+        const pathRandom = join(__dirname, "Nazrul", "font", `${randomPath[Math.floor(Math.random() * randomPath.length)]}`);
         formPush = { body: msg, attachment: createReadStream(pathRandom), mentions }
       }
       else formPush = { body: msg, mentions }
