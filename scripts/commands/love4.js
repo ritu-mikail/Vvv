@@ -4,7 +4,7 @@
 */
 
 module.exports.config = {
-    name: "dp19",
+    name: "love4",
     version: "2.0.0",
     permission: 0,
     credits: "nazrul",
