@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "goiadmin3",
+  name: "goiadm3",
     version: "1.0.0",
     permission: 0,
     credits: "nayan",
