@@ -1,13 +1,13 @@
 /**
-* @author ProCoderMew
+* @author nazrul
 * @warn Do not edit code or edit credits
 */
 
 module.exports.config = {
-    name: "dp8",
+    name: "love7",
     version: "2.0.0",
     permssion: 2,
-    credits: "Mohammad Nayan",
+    credits: "nazrul",
     description: "",
     prefix: true,
     category: "Love",
