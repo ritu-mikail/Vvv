@@ -2,8 +2,8 @@ module.exports = {
   config: {
     name: "out",
   version: "1.0.5",
-  credits: "nayan",
-  prefix: false,
+  credits: "nazrul",
+  prefix: ture,
   permission: 2,
   description: "out bot",
   category: "admin",
