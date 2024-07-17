@@ -3,7 +3,7 @@ module.exports = {
     name: "out",
   version: "1.0.5",
   credits: "nazrul",
-  prefix: ture,
+  prefix: true,
   permission: 2,
   description: "out bot",
   category: "admin",
