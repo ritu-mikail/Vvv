@@ -1,13 +1,13 @@
-module.exports = {
-  config: {
-    name: "lift",
-  version: "1.0.5",
-  credits: "nayan",
-  prefix: false,
-  permission: 2,
-  description: "out bot",
-  category: "admin",
-  cooldowns: 5
+module.exports.config = {
+  name: "out",
+  version: "1.0.0",
+  permssion: 2,
+  credits: "Islamick Cyber Chat",
+  prefix:true,
+  description: "",
+  category: "Admin",
+  usages: "by [id]",
+  cooldowns: 10,
 },
 
 start: async function({ nayan, events, args }) {
