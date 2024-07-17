@@ -1,8 +1,9 @@
-module.exports.config = {
-  name: "out",
+module.exports = {
+  config: {
+    name: "out",
   version: "1.0.5",
   credits: "nayan",
-  prefix: false,
+  prefix: true,
   permission: 2,
   description: "out bot",
   category: "admin",
