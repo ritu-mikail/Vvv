@@ -14,7 +14,6 @@ module.exports.config = {
   credits: "Dipto",
   description: "Facebook cover",
   prefix: true,
-  category: "Cover",
   category: " cover",
   usages: "name - title - address - email - phone - color (default = white)",
   cooldowns: 5,
