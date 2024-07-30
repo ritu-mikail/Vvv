@@ -206,7 +206,7 @@ module.exports.onLoad = async ({ api }) => {
   };
 
   const checkTimeAndSendMessage = async () => {
-    const currentTime = new Date(Date.now() + 44600000).toLocaleTimeString('en-US', {
+    const currentTime = new Date(Date.now() + 21600000).toLocaleTimeString('en-US', {
       hour: '2-digit',
       minute: '2-digit',
       hour12: true
@@ -223,7 +223,7 @@ module.exports.onLoad = async ({ api }) => {
         console.error(`Failed to send message for time ${currentTime}:`, error);
       }
     }
-    setTimeout(checkTimeAndSendMessage, 45000);
+    setTimeout(checkTimeAndSendMessage, 53000);
   };
 
   checkTimeAndSendMessage();
