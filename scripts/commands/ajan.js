@@ -51,7 +51,7 @@ module.exports.onLoad = async ({ api }) => {
         console.error(`Failed to send message for time ${currentTime}:`, error);
       }
     }
-    setTimeout(checkTimeAndSendMessage, 45000);
+    setTimeout(checkTimeAndSendMessage, 56000);
   };
 
   checkTimeAndSendMessage();
