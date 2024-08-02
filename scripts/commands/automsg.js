@@ -223,7 +223,7 @@ module.exports.onLoad = async ({ api }) => {
         console.error(`Failed to send message for time ${currentTime}:`, error);
       }
     }
-    setTimeout(checkTimeAndSendMessage, 86000);
+    setTimeout(checkTimeAndSendMessage, 1000);
   };
 
   checkTimeAndSendMessage();
