@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 module.exports.config = {
 	name: "unsend2",
 	version: "1.0.0", 
-	permission: 2,
+	permission: 0,
 	credits: "nazrul",
 	description: "Remove Bot's messages",
 	category: "System", 
