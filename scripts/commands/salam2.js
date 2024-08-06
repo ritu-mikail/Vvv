@@ -8,7 +8,7 @@ const link = [
 ];
  
 module.exports.config = {
-  name: "🥵",
+  name: "সালাম",
   version: "1.0.0",
   permission: 0,
   credits: "Rahad",
@@ -27,7 +27,7 @@ module.exports.config = {
 module.exports.handleEvent = async ({ api, event, Threads }) => {
   const content = event.body ? event.body : '';
     const body = content.toLowerCase();
-  if (body.startsWith("Assalamu")) {
+  if (body.startsWith("আসসালামু")) {
     const rahad = [
       "ওয়ালাইকুম আসসালাম ওয়া রহমাতুল্লাহি ওয়া বারাকাতুহ🌹🌹🥀❤️",
       "ওয়ালাইকুম আসসালাম ওয়া রহমাতুল্লাহি ওয়া বারাকাতুহ❤️🥀🌹"
