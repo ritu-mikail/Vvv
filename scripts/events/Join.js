@@ -31,10 +31,10 @@ module.exports.run = async function({ api, event }) {
   if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
     api.changeNickname(`${(!global.config.BOTNAME) ? "bot" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
     const fs = require("fs");
-    return api.sendMessage("BOT CONNECTED!!! \n\n আসসালামু আলাইকুম \n\n adding in the group chat successfully!!!\n\n আসা করি  সবাই  ভালো আছেন।💞💞 আমি আপনাদের মাঝে  নতুন\n______________________________\n\n My profix = /\n Admin =NAZARL\n______________________________যেকোনো অভিযোগ অথবা হেল্প এর জন্য আমার BOSS জিঁলাঁপিঁ কে নক করতে পারেন \nhttps://m.me/ji.la.pi.6\n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----", event.threadID, () => api.sendMessage({body:`আসসালামুআলাইকুম 💖
+    return api.sendMessage("", event.threadID, () => api.sendMessage({body:`আসসালামুআলাইকুম 💖
 ____________________________________
 BOT CONNECTED!!! 
-adding in the group chat successfully!!! আসা করি  সবাই  ভালো আছেন।💞💞 আমি আপনাদের মাঝে  নতুন💔💔❤️❤️
+adding in the group chat successfully!!! \nআসা করি  সবাই  ভালো আছেন।💞💞 আমি আপনাদের মাঝে  নতুন💔💔❤️❤️
 ____________________________________\n\nযেকোনো কমান্ড দেখতে ${global.config.PREFIX}help ব্যবহার করুন
 \n\উদাহারণ:\n${global.config.PREFIX}mark (text)\n${global.config.PREFIX}lexi (text)\n${global.config.PREFIX}trump (text)\n${global.config.PREFIX}info
 ____________________________________
@@ -42,7 +42,7 @@ ____________________________________
 জিঁলাঁপিঁ কে নক করতে পারেন 
 👉Fb https://www.facebook.com/ji.li.pi.6
 
-`, attachment: fs.createReadStream(__dirname + "Nazrul", "font")} ,threadID));
+`, attachment: fs.createReadStream(__dirname + "/Nazrul/join.jpeg")} ,threadID));
   }
   else {
     try {
