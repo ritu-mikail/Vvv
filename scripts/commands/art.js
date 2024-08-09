@@ -9,7 +9,7 @@ module.exports = {
     prefix : true,
     description: "Art images",
     category: "AI",
-    guide: {
+    dependencies: {
       en: "${pn} reply to an image with a prompt and choose model 1 - 10"
     }
   },
