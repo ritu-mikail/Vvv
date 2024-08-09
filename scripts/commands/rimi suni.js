@@ -1,5 +1,5 @@
 module.exports.config = {
-    name: "সুমি",
+    name: "রিয়া",
     version: "1.0.2",
     permission: 0,
     prefix: 'awto',
@@ -23,7 +23,7 @@ module.exports.run = async function({ api, event, args, Users }) {
         }
         
         const encodedQuery = encodeURIComponent(query);
-        const apiUrl = `https://mostakim-api.onrender.com/gpt4?ask=${question}&id=25527373`;
+        const apiUrl = `https://mostakim-api.onrender.com/gpt4?ask=${question}`;
         
         const res = await axios.get(apiUrl);
         
