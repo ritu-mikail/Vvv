@@ -4,7 +4,7 @@ module.exports.config = {
     permission: 2,
     credits: "nazrul",
     description: "Leave the group",
-    prefix: true,
+    prefix: "noprefix",
     category: "Admin",
     usages: "out [id]",
     cooldowns: 10,
