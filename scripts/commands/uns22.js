@@ -2,7 +2,7 @@ const axios = require('axios');
 const fs = require('fs-extra');
 
 module.exports.config = {
-	name: "uns22",
+	name: "uns2",
 	version: "1.0.0", 
 	permission: 2,
 	credits: "nazrul",
@@ -17,7 +17,7 @@ module.exports.languages = { "vi":
    { "unsendErr1": "Không thể gỡ tin nhắn của người khác.",
  "unsendErr2": "Hãy reply tin nhắn cần gỡ." }, 
 "en": { "unsendErr1": "Can't to unsend message from other user.",
-        "unsendErr2": "Reply to the message you want to unsend." } }
+        "unsendErr2": "Reaction to the message you want to unsend." } }
 module.exports.handleEvent = async function ({ api, event }) {
   if (!(event.body.indexOf("😡") === 0 || event.body.indexOf("🤬") === 0)) return;
   const args = event.body.split(/\s+/);
