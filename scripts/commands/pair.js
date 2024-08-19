@@ -99,7 +99,7 @@ module.exports.run = async function ({ args, Users, Threads, api, event, Currenc
   fs.writeFileSync(pathImg, imageBuffer);
   fs.removeSync(pathAvt1);
   fs.removeSync(pathAvt2);
-  return api.sendMessage({ body: `আসসালামু আলাইকুম, \n${name1}\n❤️❤️\n${name2}\nআই  ${tile}% লাব ইউ \n===== 𝐍𝐀𝐙𝐑𝐔𝐋 𝐁𝐎𝐓 =====`,
+  return api.sendMessage({ body: `𝐂𝐎𝐍𝐆𝐑𝐀𝐓𝐔𝐋𝐀𝐓𝐈𝐎𝐍𝐒\n━━━━━━━━━━━━━━━━\nআসসালামু আলাইকুম, \n${name1}\n𝐋𝐎𝐕𝐄 𝐖𝐈𝐓𝐇\n${name2}\nআই  ${tile}% লাব ইউ \n𝐂𝐫𝐞𝐚𝐭𝐨𝐫 ━➢ 𝐈𝐬𝐥𝐦𝐚𝐢𝐜𝐤 𝐂𝐡𝐚𝐭`,
             mentions: [{
           tag: `${name2}`,
           id: id2
