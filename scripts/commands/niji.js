@@ -2,7 +2,6 @@ const axios = require("axios");
 module.exports = {
     config: {
         name: "niji",
-        aliases: ["nijijourney", "art"],
         version: "1.0",
         credits: "Nazrul",
         prefix: true,
