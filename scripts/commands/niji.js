@@ -14,7 +14,7 @@ module.exports = {
       }
     },
 
-    module.exports.run = async function({ api, args, message, event }) {
+    module.exports.run: async function({ api, args, message, event }) {
         try {
             let prompt = "";
             let style = "";
