@@ -1,49 +1,56 @@
+const { get } = require('axios');
+const { writeFileSync, createReadStream, unlinkSync } = require('fs-extra');
+const { shorten } = require('tinyurl');
+
 module.exports.config = {
-    name: "4k",
-    version: "1.0.0",
-    permission: 0,
-    credits: "Nayan",
-    description: "",
-    prefix: true,
-    category: "prefix",
-    usages: "[model]",
-    cooldowns: 10,
-    dependencies: {
-       'nayan-server': ''
+  name: "4k",
+  version: "1.6.9",
+  credits: "Nazrul",
+  permission: 0,
+  prefix: false,
+  category: "image",
+  cooldowns: 4,
+  description: "Image enhancer",
+  usage: "<p> 4k [reply to an image]",
+  };
+
+  module.exports.run = async function ({ api, event, args }) {
+    const { threadID, messageID } = event;
+
+    const photoUrl = event.messageReply?.attachments[0]?.url || args.join(' ');
+    
+    if (!photoUrl) {
+      api.sendMessage("🔰 | Please reply to a photo to proceed enhancing images...", threadID, messageID);
+      return;
     }
-};
+    const finalUrl = await shorten(photoUrl);
 
-  module.exports.run = async function ({ message, args, event, api }) {
-    let imageUrl;
+      api.sendMessage("⏳ | Enhancing please wait...", threadID, async () => {
+   try {
 
-    if (event.type === "message_reply") {
-      const replyAttachment = event.messageReply.attachments[0];
+   const { data } = await get(`https://noobs-api2.onrender.com/dipto/4k?img=${encodeURIComponent(finalUrl)}&key=dipto008`);
 
-      if (["photo", "sticker"].includes(replyAttachment?.type)) {
-        imageUrl = replyAttachment.url;
-      } else {
-        return api.sendMessage(
-          { body: "⚠️ | Reply must be an image." },
-          event.threadID
-        );
-      }
-    } else if (args[0]?.match(/(https?:\/\/.*\.(?:png|jpg|jpeg))/g)) {
-      imageUrl = args[0];
-    } else {
-      return api.sendMessage({ body: "❌ | Reply to an image." }, event.threadID);
-    }
+   const result = data.dipto;
+   const author = data.author;
+   const ShortUrl = await shorten(result);
+     
+   const path = __dirname + `/cache/fuck.jpg`;
 
-    try {
-      const url = await tinyurl.shorten(imageUrl);
-      const k = await a.get(`https://www.api.vyturex.com/upscale?imageUrl=${url}`);
+   const img = (await get(result, { responseType: "arraybuffer" })).data;
 
-      message.reply("☢️ | Wait for some time••");
 
-      const resultUrl = k.data.resultUrl;
+   writeFileSync(path, Buffer.from(img, "binary"));
+   api.setMessageReaction("✅", messageID, (err) => {}, true);
 
-      message.reply({ body: "✨ | Done 4ᴋ ɪᴍᴀɢᴇ\n\nʜᴇʀᴇ ᴛʜɪs ɪs ʏᴏᴜʀ ᴘʜᴏᴛᴏ", attachment: await global.utils.getStreamFromURL(resultUrl) });
-    } catch (error) {
-      message.reply("❌ | Error: " + error.message);
-    }
+    api.sendMessage({
+      body: `
+      ✅ | Successfully Enhanced Your Image...
+      🔰 | Author: 𝐌𝐫 𝐍𝐀𝐙𝐑𝐔𝐋 💁😘🪽 
+      ☂ | Download Link: ${ShortUrl}`,
+      attachment: createReadStream(path)
+    }, threadID, () => unlinkSync(path), messageID);
+  } catch (error) {
+    api.sendMessage("❎ | " + error, threadID, messageID)
   }
-}; 
+ });
+};
