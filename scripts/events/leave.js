@@ -19,7 +19,7 @@ module.exports.run = async function({ api, event, Users, Threads }) {
   const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
   const type = (event.author == event.logMessageData.leftParticipantFbId) ? "  এখানে জিঁলাপিঁ থাকতে তুই লিভ নিবি 😺😸😹🤣😹 \n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----" : "তোমার এই গ্রুপে থাকার কোনো যোগ্যাতা নেই😡।\nতাই তোমার লাথি মেরে গ্রুপ থেকে বের করে দেওয়া হলো🤪। WELLCOME REMOVE🤧 \n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----";
   const path = join(__dirname, "Nazrul", "leaveGif");
-  const gifPath = join(path, `leave1.gif`);
+  const gifPath = join(path, `out.jpeg`);
   var msg, formPush
 
   if (existsSync(path)) mkdirSync(path, { recursive: true });
