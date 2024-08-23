@@ -7,7 +7,7 @@ module.exports.config = {
   version: "1.6.9",
   credits: "Nazrul",
   permission: 0,
-  prefix: false,
+  prefix: true,
   category: "image",
   cooldowns: 4,
   description: "Image enhancer",
