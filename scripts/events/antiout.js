@@ -2,7 +2,7 @@ module.exports.config = {
  name: "antiout",
  eventType: ["log:unsubscribe"],
  version: "0.0.1",
- credits: "DungUwU",
+ credits: "Nazrul",
  description: "Listen events Notify bot or group member with random gif/photo/video"
 };
 
@@ -15,8 +15,13 @@ module.exports.run = async({ event, api, Threads, Users }) => {
  if (type == "self-separation") {
   api.addUserToGroup(event.logMessageData.leftParticipantFbId, event.threadID, (error, info) => {
    if (error) {
-    api.sendMessage(`সরি জি্ঁপা্ঁপি্ঁ বস ${name} ব্লক করছে তাই এড করতে পারলাম না😞😞  \n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----:( `, event.threadID)
-   } else api.sendMessage(`জিঁলাঁপিঁ BoSS, ${name} নিব নেওয়া আইডি টা পুনরায় এড করতে সফল্য! \n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----`,
+    api.sendMessage(`সরি  বস😞😞😞😞\n${name}\nব্লক করছে অথবা তার আইডিতে মেসেঞ্জার অপশন তাই এড করতে পারলাম না😞😞  \n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----`, event.threadID)
+   } else api.sendMessage(`লিফ্ট নেওয়া  ${name}  কে  পুনরায় এ্যাড করা হইছে\n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----`;
+const path = join(__dirname, "Nazrul", "leaveGif");
+  const gifPath = join(path, `out.jpeg`);
+  var msg, formPush
+
+  if (existsSync(path)) mkdirSync(path, { recursive: true });
 
  event.threadID);
   })
