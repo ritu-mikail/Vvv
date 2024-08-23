@@ -10,20 +10,13 @@ module.exports.run = async({ event, api, Threads, Users }) => {
  let data = (await Threads.getData(event.threadID)).data || {};
  if (data.antiout == false) return;
  if (event.logMessageData.leftParticipantFbId == api.getCurrentUserID()) return;
-const { join } =  global.nodemodule["path"];
-  const { threadID } = event;
  const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
  const type = (event.author == event.logMessageData.leftParticipantFbId) ? "self-separation" : "being kicked by the administrator";
  if (type == "self-separation") {
   api.addUserToGroup(event.logMessageData.leftParticipantFbId, event.threadID, (error, info) => {
    if (error) {
-    api.sendMessage(`সরি  বস😞😞😞😞\n${name}\nব্লক করছে অথবা তার আইডিতে মেসেঞ্জার অপশন তাই এড করতে পারলাম না😞😞  \n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----`, event.threadID)
-   } else api.sendMessage(`লিফ্ট নেওয়া  ${name}  কে  পুনরায় এ্যাড করা হইছে\n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----`;
-const path = join(__dirname, "Nazrul", "leaveGif");
-  const gifPath = join(path, `out.jpeg`);
-  var msg, formPush
-
-  if (existsSync(path)) mkdirSync(path, { recursive: true });
+    api.sendMessage(`সরি বস😞😞😞😞\n${name}\nব্লক করছে অথবা তার আইডিতে মেসেঞ্জার অপশন তাই এড করতে পারলাম না😞😞\n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----`, event.threadID)
+   } else api.sendMessage(`লিফ্ট নেওয়া  ${name}  কে  পুনরায় এ্যাড করা হইছে\n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝐍𝐀𝐙𝐑𝐔𝐋 -----❖----`,
 
  event.threadID);
   })
