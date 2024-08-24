@@ -139,6 +139,10 @@ module.exports.run = async ({ event, api, args }) => {
   if (args.length === 0) {
     return api.sendMessage(
       '✨ 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐅𝐨𝐧𝐭𝐬 𝐒𝐭𝐚𝐲𝐥𝐞 ✨\n✇━━━━━━━━━━━━━━━✇\n𝟏 - 𝓝𝓐𝓩𝓡𝓤𝓛 /𝓷𝓪𝔃𝓻𝓾𝓵\n𝟐 - ℕ𝔸ℤℝ𝕌𝕃 𝕟𝕒𝕫𝕣𝕦𝕝\n𝟑 - 𝗡𝗔𝗭𝗥𝗨𝗟 | 𝗻𝗮𝘇𝗿𝘂𝗹\n𝟒 - 𝑵𝑨𝒁𝑹𝑼𝑳 | 𝒏𝑎𝒛𝒓𝒖𝒍\n 𝟓 - 𝔑𝔄ℨℜ𝔘𝔏 | 𝔫𝔞𝔷𝔯𝔲𝔩\n𝟔 - NAZRUL | ɴᴀᴢʀᴜʟ\n𝟕 - 🅽🅰🆉🆁🆄🅻 \n𝟖 -🅝🅐🅩🅡🅤🅛\n𝟗 - 𝐍𝐀𝐙𝐑𝐔𝐋 | 𝐧𝐚𝐳𝐫𝐮𝐥\n𝟏𝟎 -𝙽𝙰𝚉𝚁𝚄𝙻 | 𝚗𝚊𝚣𝚛𝚞𝚕\nEx:-font 1 NAZRUL/nazrul',
+attachment: fs.createReadStream(__dirname + "/cache/1.png")}, event.threadID, () => 
+    fs.unlinkSync(__dirname + "/cache/1.png"));  
+      return request(encodeURI(`https://graph.facebook.com/100012191281263/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`)).pipe(
+fs.createWriteStream(__dirname+'/cache/1.png')).on('close',() => callback());
       event.threadID,
       event.messageID
     );
