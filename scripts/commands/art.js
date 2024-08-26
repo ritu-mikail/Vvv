@@ -11,7 +11,7 @@ module.exports = {
     category: "art",
     countDown: 5,
   },
-  module.exports.run: async function ({ message, event, args, api }) {
+  run: async function ({ message, event, args, api }) {
     try {
       let photoUrl;
       const defaultPrompts = ["anime", "watercolor", "sketch", "abstract", "cartoon"];
