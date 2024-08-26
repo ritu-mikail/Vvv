@@ -1,13 +1,18 @@
  module.exports.config = {
-  name: "resend2",
-  version: "1.0.0",
-  permission: 0,
-  credits: "nazrul",
+ module.exports.config = {
+  name: "resend",
+  version: "2.0.0",
+  permssion: 1,
+  credits: "Nazrul",
+  description: "",
+  category: "general", 
   prefix: true,
-  description: "resend",
-  category: "editing",
   usages: "resend",
-  cooldowns: 5
+  cooldowns: 0,
+  hide:true,
+  dependencies: {"request":"",       
+                 "fs-extra":"",
+                 "axios":""
 };
 
 module.exports.handleEvent = async function({
